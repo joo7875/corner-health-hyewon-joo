@@ -9,12 +9,12 @@ app.use(cors());
 app.use(bodyParser.json());
 
 const {
-  HEALTHIE_GRAPHQL,
-  HEALTHIE_KEY,
+  HEALTHIE_API_URL,
+  HEALTHIE_API_KEY,
   INSURANCE_ELIGIBILITY_API,
   PORT = 4000,
 } = process.env;
-if (!HEALTHIE_GRAPHQL || !HEALTHIE_KEY || !INSURANCE_ELIGIBILITY_API) {
+if (!HEALTHIE_API_URL || !HEALTHIE_API_KEY || !INSURANCE_ELIGIBILITY_API) {
   console.error("Missing request endpoints");
   process.exit(1);
 }
@@ -26,11 +26,11 @@ app.post("/api/graphql", async (req, res) => {
   try {
     const { query, variables } = req.body;
     const response = await axios.post(
-      HEALTHIE_GRAPHQL,
+      HEALTHIE_API_URL,
       { query, variables },
       {
         headers: {
-          Authorization: `Basic ${HEALTHIE_KEY}`,
+          Authorization: `Basic ${HEALTHIE_API_KEY}`,
           AuthorizationSource: "API",
           "Content-Type": "application/json",
         },
