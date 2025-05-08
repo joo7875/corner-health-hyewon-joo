@@ -33,6 +33,44 @@ yarn start
 
 The app will be available at [http://localhost:3000](http://localhost:3000).
 
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── AppointmentDetails.tsx
+│   ├── AppointmentList.tsx
+│   └── Chat.tsx
+├── constants/
+│   └── constant.ts
+├── graphql/
+│   ├── generated/
+│   │   └── types/
+│   │       └── index.ts
+│   ├── mutations/
+│   │   └── createNote.graphql
+│   ├── queries/
+│   │   ├── appointment.graphql
+│   │   ├── appointments.graphql
+│   │   ├── conversation.graphql
+│   │   └── conversationMemberships.graphql (not used)
+│   └── schema.graphql
+├── styles/
+│   ├── AppointmentDetails.css
+│   ├── AppointmentList.css
+│   └── Chat.css
+├── App.css
+├── App.tsx
+├── AppProvider.tsx
+├── index.css
+├── index.tsx
+.env.local
+codegen.yml
+package.json
+README.md
+server.ts
+```
+
 ---
 
 ## 1. System Design
