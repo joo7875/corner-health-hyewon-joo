@@ -1,0 +1,30 @@
+query Appointment($id: ID!) {
+  appointment(id: $id) {
+    id
+    date
+    contact_type
+    location
+    provider {
+      id
+      full_name
+    }
+    user {
+      id
+      full_name
+      dob
+      policies {
+        id
+        priority_type
+        num
+        insurance_plan {
+          payer_id
+          payer_name
+        }
+      }
+    }
+    appointment_type {
+      id
+      name
+    }
+  }
+}

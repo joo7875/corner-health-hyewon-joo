@@ -1,0 +1,14 @@
+mutation CreateNote($content: String!, $conversation_id: String!) {
+  createNote(input: { content: $content, conversation_id: $conversation_id }) {
+    note {
+      id
+      created_at
+      updated_at
+      content
+    }
+    messages {
+      field
+      message
+    }
+  }
+}

@@ -1,0 +1,136 @@
+/* AppointmentDetails.css */
+
+.details {
+  overflow-y: auto;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  background: #f7f9fc;
+}
+
+.detail-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 32px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  width: 100%;
+}
+
+.detail-card h2 {
+  margin-bottom: 24px;
+  font-size: 24px;
+  color: #2d3748;
+}
+
+.detail-card p {
+  margin-bottom: 12px;
+  font-size: 15px;
+  color: #4a5568;
+}
+
+.detail-card p strong {
+  color: #2d3748;
+}
+
+.user-section {
+  margin-top: 32px;
+}
+
+.user-section h3 {
+  font-size: 18px;
+  margin-bottom: 16px;
+  color: #2d3748;
+}
+
+.user-section p {
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+/* Table: equal columns, full text wrapping */
+.user-section table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+  table-layout: fixed;
+}
+
+.user-section th,
+.user-section td {
+  width: 20%;
+  padding: 12px;
+  border: 1px solid #e2e8f0;
+  text-align: left;
+  font-size: 14px;
+  color: #4a5568;
+
+  /* allow wrapping and full text display */
+  white-space: normal;
+  word-break: break-word;
+  overflow: visible;
+  text-overflow: clip;
+}
+
+.user-section th {
+  background: #f1f5f9;
+  font-weight: 600;
+}
+
+/* Centered loading / error states */
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  font-size: 16px;
+  color: #718096;
+}
+
+.error {
+  color: #e53e3e;
+  margin-top: 12px;
+  font-weight: 500;
+}
+
+.success {
+  color: #38a169;
+  margin-top: 12px;
+  font-weight: 500;
+}
+
+/* No-policies row */
+.no-policies {
+  text-align: center;
+  padding: 16px;
+  color: #718096;
+  font-style: italic;
+}
+
+/* Button in detail card */
+/* Replace your .detail-card button rules with: */
+.detail-card button {
+  display: block;
+  width: 140px;
+  margin-left: auto;
+  padding: 8px 16px;
+  margin-top: 16px;
+  font-size: 14px;
+  font-weight: 600;
+
+  background: #f7fafc;
+  color: #2d3748;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.detail-card button:hover {
+  background: #f1f5f9;
+  border-color: #a0aec0;
+}
+
+.detail-card button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

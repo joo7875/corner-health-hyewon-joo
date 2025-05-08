@@ -1,0 +1,33 @@
+query Appointments(
+  $should_paginate: Boolean
+  $offset: Int
+  $is_active: Boolean
+) {
+  appointmentsCount(is_org: true, is_active: $is_active)
+  appointments(
+    should_paginate: $should_paginate
+    offset: $offset
+    is_active: $is_active
+    is_org: true
+  ) {
+    id
+    date
+    contact_type
+    location
+    provider {
+      id
+      full_name
+    }
+    appointment_type {
+      id
+      name
+    }
+    attendees {
+      id
+      full_name
+      dob
+      avatar_url
+      phone_number
+    }
+  }
+}

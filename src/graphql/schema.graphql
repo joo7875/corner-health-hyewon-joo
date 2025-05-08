@@ -1,0 +1,118 @@
+extend type Query {
+  appointments(
+    should_paginate: Boolean
+    offset: Int
+    is_active: Boolean
+    is_org: Boolean
+  ): [Appointment!]!
+
+  appointmentsCount(is_org: Boolean, is_active: Boolean): Int!
+
+  appointment(id: ID!): Appointment!
+
+  conversationMemberships(
+    offset: Int
+    active_status: String
+    provider_id: ID
+  ): [ConversationMembership!]!
+
+  conversationMembershipsCount(
+    offset: Int
+    active_status: String
+    provider_id: ID
+  ): Int!
+
+  conversation(id: ID!): Conversation!
+}
+
+extend type Mutation {
+  createNote(input: CreateNoteInput!): CreateNotePayload
+}
+
+input CreateNoteInput {
+  content: String!
+  conversation_id: String!
+}
+
+type CreateNotePayload {
+  note: Note!
+  messages: [FieldError!]!
+}
+
+type FieldError {
+  field: String
+  message: String!
+}
+
+type ConversationMembership {
+  id: ID!
+  conversation_id: ID
+  display_name: String
+  convo: Conversation
+  archived: Boolean
+  created_at: String
+  updated_at: String
+  user_id: ID
+  viewed: Boolean
+  creator: User
+}
+
+type Conversation {
+  id: ID!
+  name: String!
+  created_at: String!
+  updated_at: String!
+  notes: [Note!]!
+  conversation_memberships: [ConversationMembership!]!
+}
+
+type Note {
+  id: ID!
+  user_id: ID!
+  conversation_id: ID!
+  created_at: String!
+  updated_at: String!
+  content: String!
+}
+
+type Appointment {
+  id: ID!
+  date: String!
+  contact_type: String!
+  location: String!
+  provider: Provider!
+  appointment_type: AppointmentType!
+  attendees: [User]
+  user: User
+}
+
+type Provider {
+  id: ID
+  full_name: String
+}
+
+type AppointmentType {
+  id: ID
+  name: String
+}
+
+type User {
+  id: ID
+  full_name: String
+  avatar_url: String
+  phone_number: String
+  dob: String
+  policies: [Policy!]!
+}
+
+type Policy {
+  id: ID!
+  priority_type: String!
+  num: String!
+  insurance_plan: InsurancePlan!
+}
+
+type InsurancePlan {
+  payer_id: ID
+  payer_name: String
+}

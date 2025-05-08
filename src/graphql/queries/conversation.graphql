@@ -1,0 +1,22 @@
+query Conversation($id: ID!) {
+  conversation(id: $id) {
+    id
+    name
+    conversation_memberships {
+      id
+      creator {
+        id
+        full_name
+      }
+    }
+    notes {
+      id
+      user_id
+      content
+      created_at
+      updated_at
+    }
+    created_at
+    updated_at
+  }
+}

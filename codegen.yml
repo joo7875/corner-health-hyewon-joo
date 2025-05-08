@@ -1,0 +1,9 @@
+schema: ./src/graphql/schema.graphql
+documents: ./src/graphql/**/*.graphql
+generates:
+  ./src/graphql/generated/types/index.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-query
+config: { reactQueryVersion: 5 }

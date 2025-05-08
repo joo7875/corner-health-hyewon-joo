@@ -1,0 +1,44 @@
+query ConversationMemberships(
+  $offset: Int
+  $active_status: String
+  $provider_id: ID
+) {
+  conversationMembershipsCount(
+    active_status: $active_status
+    provider_id: $provider_id
+  )
+  conversationMemberships(
+    offset: $offset
+    active_status: $active_status
+    provider_id: $provider_id
+  ) {
+    id
+    conversation_id
+    display_name
+    convo {
+      id
+      name
+      updated_at
+      notes {
+        id
+        user_id
+        conversation_id
+        created_at
+        updated_at
+        content
+      }
+      # list all members of this convo
+      conversation_memberships {
+        creator {
+          id
+          full_name
+        }
+      }
+    }
+    archived
+    created_at
+    updated_at
+    user_id
+    viewed
+  }
+}

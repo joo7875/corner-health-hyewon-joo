@@ -1,0 +1,91 @@
+/* Sidebar container now scrolls vertically */
+.sidebar {
+  position: relative;
+  width: 320px;
+  background: #fff;
+  border-right: 1px solid #e1e4e8;
+  padding: 20px;
+  overflow-y: auto; /* ← scroll here */
+  overflow-x: hidden;
+}
+
+/* Optional: custom scrollbar on the sidebar itself */
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+.sidebar::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+.sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Header */
+.sidebar h2 {
+  margin-bottom: 8px;
+  font-size: 20px;
+  color: #1a202c;
+}
+.sidebar .count {
+  font-size: 14px;
+  color: #4a5568;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+/* Reset list spacing */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Appointment cards */
+.sidebar ul li {
+  box-sizing: border-box; /* ensure padding+border fit */
+  width: 100%;
+  border: 1px solid #e2e8f0; /* light gray border */
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 12px; /* only bottom margin */
+  background: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.sidebar ul li:hover {
+  background: #edf2f7;
+  border-color: #cbd5e0;
+}
+
+.sidebar ul li.active {
+  background: #e6f4ff;
+  border-color: #90cdf4;
+}
+
+/* Appointment text */
+.appt-date {
+  font-size: 13px;
+  color: #718096;
+}
+.appt-provider {
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 4px;
+  color: #2d3748;
+}
+.appt-type,
+.appt-attendee {
+  font-size: 14px;
+  color: #4a5568;
+  margin-top: 2px;
+}
+
+/* Empty state */
+.no-appointments {
+  padding: 16px;
+  color: #718096;
+  text-align: center;
+  font-style: italic;
+}
