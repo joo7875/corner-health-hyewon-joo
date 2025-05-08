@@ -1,15 +1,13 @@
-/* Sidebar container now scrolls vertically */
 .sidebar {
   position: relative;
   width: 320px;
   background: #fff;
   border-right: 1px solid #e1e4e8;
   padding: 20px;
-  overflow-y: auto; /* ← scroll here */
+  overflow-y: auto;
   overflow-x: hidden;
 }
 
-/* Optional: custom scrollbar on the sidebar itself */
 .sidebar::-webkit-scrollbar {
   width: 6px;
 }
@@ -43,12 +41,11 @@
 
 /* Appointment cards */
 .sidebar ul li {
-  box-sizing: border-box; /* ensure padding+border fit */
-  width: 100%;
-  border: 1px solid #e2e8f0; /* light gray border */
+  box-sizing: border-box;
+  border: 1px solid #e2e8f0;
   border-radius: 8px;
   padding: 16px;
-  margin-bottom: 12px; /* only bottom margin */
+  margin-bottom: 12px;
   background: #fff;
   cursor: pointer;
   transition: background 0.2s ease, border-color 0.2s ease;
