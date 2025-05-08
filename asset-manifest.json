@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/corner-health-hyewon-joo/static/css/main.cc5564c0.css",
+    "main.js": "/corner-health-hyewon-joo/static/js/main.c0c5c581.js",
+    "static/js/453.ba273304.chunk.js": "/corner-health-hyewon-joo/static/js/453.ba273304.chunk.js",
+    "index.html": "/corner-health-hyewon-joo/index.html",
+    "main.cc5564c0.css.map": "/corner-health-hyewon-joo/static/css/main.cc5564c0.css.map",
+    "main.c0c5c581.js.map": "/corner-health-hyewon-joo/static/js/main.c0c5c581.js.map",
+    "453.ba273304.chunk.js.map": "/corner-health-hyewon-joo/static/js/453.ba273304.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cc5564c0.css",
+    "static/js/main.c0c5c581.js"
+  ]
+}
