@@ -19,7 +19,7 @@ yarn install
 yarn codegen
 ```
 
-3. Run a backend server:
+3. Run a backend server
 
 ```bash
 node server.js
