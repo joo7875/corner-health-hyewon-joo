@@ -79,14 +79,14 @@ Automate insurance eligibility checks and surface the results to staff, provider
 
 1. **Trigger events**
 
-   - New appointment scheduled or rescheduled
-   - Patient insurance data created or updated
+   - New appointment scheduled or rescheduled.
+   - Patient insurance data created or updated.
 
 2. **Processing**
 
    - A small service enqueues each eligibility request.
    - Worker processes call the eligibility API.
-   - Normalized eligibility response are stores on the appointment or policy record.
+   - Normalized eligibility response are stored on the appointment or policy record.
 
 3. **Surfacing the result**
 
@@ -105,10 +105,10 @@ Automate insurance eligibility checks and surface the results to staff, provider
 
 ## 2. Third-Party Insurance Eligibility APIs
 
-| Vendor                           | Approx. cost\*                                                                       | Limitations                                                                                 | Take                                                                                                     |
-| -------------------------------- | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| [Eligible](https://eligible.com) | ≈ $0.25 per check (volume discounts)                                                 | Clearing-house onboarding required for some payers; limited sandbox data                    | Best fit if eligibility is the only integration needed                                                   |
-| [pVerify](https://pverify.io)    | Plans start around $99 per month; “Advanced Eligibility” tiers from ≈ $250 per month | Exact pricing and payer coverage vary by plan tier; requires sales contact for high volumes | Good choice if you also want built-in cost-estimator tools or batch workflows in addition to eligibility |
+| Vendor                            | Approximate Cost                                               | Considerations                                                                              | Ideal For                                                                                                                                                         |     |
+| --------------------------------- | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
+| [Eligible](https://eligible.com/) | \~\$0.25 per check (volume discounts available)                | Some payers may require clearinghouse onboarding; limited sandbox data for testing.         | Organizations seeking a straightforward solution focused solely on eligibility verification.                                                                      |     |
+| [pVerify](https://pverify.com/)   | Plans start at \~\$99/month; advanced tiers from \~\$250/month | Pricing and payer coverage vary by plan tier; requires sales contact for high-volume needs. | Organizations looking for a comprehensive solution that includes eligibility verification along with advanced features like cost estimation and batch processing. |
 
 ## 3. Operational Risks and Mitigation
 
@@ -121,11 +121,10 @@ Automate insurance eligibility checks and surface the results to staff, provider
 
 ## 4. Product Scoping - Next Steps
 
-1. **Payment estimates**  
-   Display copay/deductible next to eligibility and let staff send an estimate link to the patient.
-2. **Claims status dashboard**  
-   Show post-visit claim state (submitted, adjudicated, paid/denied).
-3. **Patient payments**  
-   Allow patients to see balances and pay online once insurance adjudication is complete.
+1. **Payment estimates**: Display copay/deductible next to eligibility and let staff send an estimate link to the patient.
+2. **Appointment push notification**: Send automated push notifications via email/SMS to remind patients of upcoming appointments.
+3. **Eligibility action items**: Flag and display any required actions when an eligibility check returns an issue for a scheduled appointment.
+4. **Claims status dashboard**: Show post-visit claim state (submitted, adjudicated, paid/denied).
+5. **Patient payments**: Allow patients to see balances and pay online once insurance adjudication is complete.
 
 Release one phase every 4-6 weeks, beginning with payment estimates, which give immediate value to both staff and patients.
